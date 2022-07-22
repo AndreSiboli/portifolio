@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+@media (max-width:1000px) {
+
+    .disappear{
+        display: none;
+    }
+    
+    /*Main Menu*/
+
+    .menuSocialMedia{
+        max-width: 100px;
+    }
+
+    .linkSocialMedia img:hover{
+        transition: transform .5s;
+        transform: scale(1.2);
+    }
+
+    /*Main Content*/
+
+    .informationSkills{
+        text-align: center;
+        margin: 40px 10px;
+    }
+
+    .InformationMine{
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+    /*My Information*/
+
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    .mainContent{
+        padding: 0px 5px 10px 5px;
+    }
+
+    .informationSkills{
+       padding: 30px;
+    }
+}
+
+@media (max-width: 900px){
+    .projectOpen{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectVisualInfo{
+        display: flex;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .projectInfo{
+        max-width:300px;
+        width: 100%;
+        display: none;
+    }
+
+    .projectImage{
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .projectDescription{
+        max-width: none;/*650px*/
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .projectDescription p{
+        width: 100%;
+    }
+
+    .projectInfo, .projectStatistic{
+        display: none;
+    }
+}
+
+@media (max-width:800px){
+    .menuSocialMedia{
+        display: none;
+    }
+}
+
+@media (max-width:700px) {
+    .projectsContainer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .projectsGroups p{
+        color: #fff;
+        font-size: clamp(0.3em, 15vw / 5, 1em);
+    }
+
+    .menuInformation{
+        justify-content: center;
+    }
+
+    .menuInformation h1{
+        display: none;
+    }
+
+    .menuGroupLinks{
+        padding: 15px 10px;
+        gap: calc(10px + 1vw);
+        font-size: clamp(0.6em, 0.8em + 1vw, 1em);
+    }
+
+    .menuGroupLinks a{
+        font-size: clamp(0.6em, 0.6em + 1vw, 1em);
+    }
+
+    main{
+        padding: 5px;
+    }
+}
+
+@media (max-width: 400px){
+   
+    .socialMedia{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #linkWindow{
+        white-space: inherit;
+    }
+
+    .projects{
+        padding: 20px;
+    }
+}
