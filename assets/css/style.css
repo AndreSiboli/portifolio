@@ -387,8 +387,6 @@ main{
 
     width: 100%;
     position: relative;
-
-    background-color: blue;
 }
 
 .projectOpen{
@@ -564,4 +562,27 @@ footer p{
     to{
         content: '|'
     }
+}
+
+/*ScrollBar*/
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-button{
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+}
+
+.projectOpen::-webkit-scrollbar-thumb{
+    border-radius: 30px;
 }
