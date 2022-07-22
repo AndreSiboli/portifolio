@@ -381,10 +381,14 @@ main{
     justify-content: center;
     align-items: center;
     max-width: 1000px;
-    max-height: 350px;
+
+    max-height: 500px;
     height: 100%;
+
     width: 100%;
     position: relative;
+
+    background-color: blue;
 }
 
 .projectOpen{
@@ -431,6 +435,7 @@ main{
 .projectDescription{
     max-width: 425px;
     width: 100%;
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 15px;
     border-radius: 20px;
@@ -440,7 +445,6 @@ main{
     font: clamp(0.6em, 0.6em + 1vw, 1.1em) var(--fontPoppins);
     letter-spacing: 0.7px;
     color: white;
-    height: 100%;
 }
 
 .closeWindow{
