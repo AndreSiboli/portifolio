@@ -257,14 +257,15 @@ const createParagrath = (texto, url)=>{
 }
 
 const createStatistic = (html, css, js)=>{
+    //O cálculo é baseado na quantidade de linhas
     let total = html+css+js
     let htmlPorcent = Math.round(html*100/total)
     let cssPorcent =  Math.round(css*100/total)
     let jsPorcent =  Math.round(js*100/total)
 
-    const htmlElement = createElementStats('assets/image/icons/html-5.png', htmlPorcent, '#FF6520')
-    const cssElement = createElementStats('assets/image/icons/css-3.png', cssPorcent, '#0074BE')
-    const jsElement =   createElementStats('assets/image/icons/javascript.png', jsPorcent, '#F8DC3E')
+    const htmlElement = createElementStats('assets/image/Icons/html-5.png', htmlPorcent, '#FF6520')
+    const cssElement = createElementStats('assets/image/Icons/css-3.png', cssPorcent, '#0074BE')
+    const jsElement =   createElementStats('assets/image/Icons/javascript.png', jsPorcent, '#F8DC3E')
 
     const arrayElement = new Array(htmlElement, cssElement, jsElement)
 

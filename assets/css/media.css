@@ -50,9 +50,14 @@
 }
 
 @media (max-width: 900px){
+    .projectOpenContainer{
+        padding: 15px 18px;
+    }
+
     .projectOpen{
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
     }
 
     .projectVisualInfo{
