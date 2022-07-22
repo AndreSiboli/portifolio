@@ -399,6 +399,7 @@ main{
     background-color: #0D0D15;
     box-sizing: border-box;
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .projectVisualInfo{
