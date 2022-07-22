@@ -440,6 +440,7 @@ main{
     font: clamp(0.6em, 0.6em + 1vw, 1.1em) var(--fontPoppins);
     letter-spacing: 0.7px;
     color: white;
+    height: 100%;
 }
 
 .closeWindow{
