@@ -164,15 +164,20 @@ setTimeout(()=>typingText(), 500)
 
 const projectsSites = {
     Ecommerce: {
-        image:'assets/image/e-commerce.png', 
+        image:'assets/image/projectsThumb/e-commerce.png', 
         title:'E-Commerce', 
         text: 'Esse projeto foi feito a partir de um site no SquareSpace com algumas modifições com JavaScript para deixar o site mais moderno. Sendo um dos meus primeiros projetos.'
     },
     LandingPage: {
-        image: 'assets/image/landingpage.png',
+        image: 'assets/image/projectsThumb/landingpage.png',
         title: 'Landing Page',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, veritatis ut aliquam ea neque, maxime fuga iusto corporis officia velit libero quae unde maiores quasi magnam deserunt reprehenderit sint? Aliquid, molestiae? Dolorem reiciendis, quae earum repellat nemo labore nisi! Ipsam placeat vero, nulla mollitia odio laboriosam eum labore asperiores eveniet?'
     },
+    MemoryGame: {
+        image: 'assets/image/projectsThumb/sonoscomputer compact.jpg',
+        title: 'MemoryGame',
+        text: 'Esse projeto será um jogo da memória simples com pontuação.'
+    }
 }
 
 const projectWindow = document.querySelector('.projectOpenContainer')
@@ -196,19 +201,19 @@ const appearDisplay = (e)=>{
         let [ html, css, js ] = [193, 655, 276]; 
         elementImg = createAnImage(projectsSites.Ecommerce.image);
         elementTitle = createTitle(projectsSites.Ecommerce.title);
-        elementParagraph = createParagrath(projectsSites.Ecommerce.text, 'https://youtube.com');
+        elementParagraph = createParagrath(projectsSites.Ecommerce.text, '#');
         elementStatistic = createStatistic(html, css, js);
     }else if(item === 'element1'){
-        let [ html, css, js ] = [193, 100, 534] 
+        let [ html, css, js ] = [193, 320, 56] 
         elementImg = createAnImage(projectsSites.LandingPage.image)
         elementTitle = createTitle(projectsSites.LandingPage.title)
-        elementParagraph = createParagrath(projectsSites.LandingPage.text)
+        elementParagraph = createParagrath(projectsSites.LandingPage.text , '#')
         elementStatistic = createStatistic(html, css, js);
     }else if(item === 'element2'){
-        let [ html, css, js ] = [500, 250, 276]
-        elementImg = createAnImage('assets/image/landingpage.png')
-        elementTitle = createTitle('')
-        elementParagraph = createParagrath('')
+        let [ html, css, js ] = [0, 0, 0]
+        elementImg = createAnImage(projectsSites.MemoryGame.image)
+        elementTitle = createTitle(projectsSites.MemoryGame.title)
+        elementParagraph = createParagrath(projectsSites.MemoryGame.text, '#')
         elementStatistic = createStatistic(html, css, js);
     }else{
         return
