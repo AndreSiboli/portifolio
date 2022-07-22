@@ -1,5 +1,4 @@
 //Add color to titles to avoid many id for each tag
-
 const changeTagColor = ()=> {
     const $nameLanguage = document.getElementsByClassName('languageName')
 

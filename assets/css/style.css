@@ -16,11 +16,11 @@ body{
 }
 
 *{
-    cursor: url('../image/iconmonstr-cursor-2.svg'), auto;
+    cursor: url('../image/cursor/iconmonstr-cursor-2.svg'), auto;
 }
 
 *:active{
-    cursor: url('../image/iconmonstr-cursor-10.svg'), auto;
+    cursor: url('../image/cursor/iconmonstr-cursor-10.svg'), auto;
 }
 
 a{
