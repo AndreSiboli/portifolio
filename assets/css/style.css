@@ -5,40 +5,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 
-:root{
+:root {
     --fontPoppins: 'Poppins', sans-serif;
     --fontDelius: 'Delius', cursive;
 }
 
-body{
+body {
     background-color: #101010;
-    
 }
 
-*{
-    cursor: url('../image/cursor/iconmonstr-cursor-2.svg'), auto;
+* {
+    : url('../image/cursor/iconmonstr-cursor-2.svg'), auto;
 }
 
-*:active{
+*:active {
     cursor: url('../image/cursor/iconmonstr-cursor-10.svg'), auto;
 }
 
-a{
+a {
     color: white;
 }
 
-a:hover{
+a:hover {
     color: darkgray;
 }
 
-.menu{
+.menu {
     position: sticky;
     top: 0;
     z-index: 99;
     transition: 0.5s ease-in-out;
 }
 
-.menuInformation{
+.menuInformation {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -49,24 +48,24 @@ a:hover{
     border-bottom: 1px solid darkgray;
 }
 
-#menuName{
+#menuName {
     font: 200 30px var(--fontPoppins);
     color: white;
 }
 
-.menuGroupLinks{
+.menuGroupLinks {
     display: flex;
     justify-content: space-evenly;
     max-width: 300px;
     width: 100%;
 }
 
-.menuGroupLinks a{
+.menuGroupLinks a {
     position: relative;
     padding-left: 3px;
 }
 
-.menuGroupLinks a::after{
+.menuGroupLinks a::after {
     content: '';
     display: block;
     height: 1px;
@@ -77,17 +76,17 @@ a:hover{
     right: 0;
 }
 
-.menuGroupLinks a:hover::after{
+.menuGroupLinks a:hover::after {
     left: 0;
     width: 100%;
 }
 
-.menuSocialMedia{
+.menuSocialMedia {
     max-width: 250px;
     width: 100%;
 }
 
-.menuSocialMedia ul{
+.menuSocialMedia ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -95,17 +94,17 @@ a:hover{
     padding: 10px;
 }
 
-.menuLink{
+.menuLink {
     display: flex;
     flex-direction: row;
 }
 
-.menuLink img{
+.menuLink img {
     width: 24px;
     height: 24px;
 }
 
-.linkSocialMedia{
+.linkSocialMedia {
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -114,22 +113,23 @@ a:hover{
 
 /*My Informations*/
 
-.mainContent{
+.mainContent {
     background-size: 200% 200%;
     animation: gradientAnimation 40s infinite alternate-reverse;
     position: relative;
 }
 
-main{
+main {
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 100%;
     gap: 20px;
-    padding: 20px 50px; /*retira se usar o bag lá em cima*/
+    padding: 20px 50px;
+    /*retira se usar o bag lá em cima*/
 }
 
-.informationSkills{
+.informationSkills {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,23 +140,24 @@ main{
     max-width: 900px;
 }
 
-#textTyping{
+#textTyping {
     color: white;
     font: 200 1.8em var(--fontPoppins);
     min-height: 1.5em;
 }
 
-.informationSkills #textTyping::after{
+.informationSkills #textTyping::after {
     content: '|';
     animation: typing 1s infinite steps(40);
 }
 
-.informationSkills p{
+.informationSkills p {
     color: white;
-    font-size: clamp(0.6, 1vw, 1em);/*1.9em*/
+    font-size: clamp(0.6, 1vw, 1em);
+    /*1.9em*/
 }
 
-.socialMedia{
+.socialMedia {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,35 +165,35 @@ main{
     width: 100%;
 }
 
-.informationImage{
+.informationImage {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     max-width: 600px;
     width: 100%;
     height: 500px;
 }
 
-.informationImageContainer{
+.informationImageContainer {
     max-width: 500px;
     width: 100%;
     aspect-ratio: 2/2;
 }
 
-.informationImageContainer img{
+.informationImageContainer img {
     width: 100%;
     height: 100%;
 }
 
-.informationPicture{
+.informationPicture {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 500px;
 }
 
-.informationPicture .image{
+.informationPicture .image {
     background-image: url('../image/new.jpeg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -204,17 +205,19 @@ main{
     margin: auto;
 }
 
-.myInfos{
+.myInfos {
     height: 500px;
     text-align: center;
 }
+
 .myInfos p {
     margin-top: 10px;
     font: 1.325em var(--fontDelius);
     color: lightgray;
 }
 
-.gitHub, .linkedin{
+.gitHub,
+.linkedin {
     color: white;
     max-width: 150px;
     width: 100%;
@@ -224,40 +227,42 @@ main{
     border: 1px solid white;
 }
 
-.gitHub:hover, .linkedin:hover{
+.gitHub:hover,
+.linkedin:hover {
     background-color: white;
     color: black;
 }
 
 /*Section Skills*/
 
-.skills{
+.skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.skills h1{
+.skills h1 {
     font: 200 2em var(--fontPoppins);
     margin-top: 50px;
     color: white;
 }
 
-.skills h2{
+.skills h2 {
     color: white;
 }
 
-.cardSkills{
+.cardSkills {
     display: flex;
     justify-content: center;
     max-width: 1000px;
     flex-wrap: wrap;
     margin: auto;
-    padding: 50px 20px;/*100px 20px 50px 20px*/
+    padding: 50px 20px;
+    /*100px 20px 50px 20px*/
 }
 
-.cards{
+.cards {
     max-width: 300px;
     width: 100%;
     padding: 20px 20px;
@@ -268,17 +273,17 @@ main{
     transition: all .1s ease-in;
 }
 
-.cards img{
+.cards img {
     width: 50px;
     height: 50px;
     object-fit: cover;
 }
 
-.cards h2{
+.cards h2 {
     padding: 5px 0px;
 }
 
-.cards p{
+.cards p {
     color: white;
     padding: 5px 0px;
     font-size: 0.9em;
@@ -286,7 +291,7 @@ main{
 
 /*Projects*/
 
-.projects{
+.projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -297,20 +302,20 @@ main{
     padding: 50px;
 }
 
-.projects > h1{
+.projects>h1 {
     font: 200 2em var(--fontPoppins);
     margin-bottom: 50px;
     color: white;
 }
 
-.projects > p{
+.projects>p {
     font: 200 clamp(0.8em, 0.5em + 0.7vw, 1.2em) var(--fontPoppins);
     margin-top: 20px;
     color: white;
     text-align: center;
 }
 
-.projectsContainer{
+.projectsContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -318,7 +323,7 @@ main{
     max-width: 1200px;
 }
 
-.projectsGroups{
+.projectsGroups {
     position: relative;
     max-width: 400px;
     width: 100%;
@@ -330,7 +335,7 @@ main{
     border-radius: 5px;
 }
 
-.projectsGroups img{
+.projectsGroups img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -338,7 +343,7 @@ main{
     border-radius: 5px;
 }
 
-.projectsInformation{
+.projectsInformation {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -355,13 +360,13 @@ main{
     opacity: 0;
 }
 
-.projectsInformation:hover{
+.projectsInformation:hover {
     opacity: 1;
 }
 
 /*Window*/
 
-.projectOpenContainer{
+.projectOpenContainer {
     display: none;
     justify-content: center;
     align-items: center;
@@ -376,7 +381,7 @@ main{
     z-index: 1000;
 }
 
-.projectOpenClose{
+.projectOpenClose {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,12 +394,12 @@ main{
     position: relative;
 }
 
-.projectOpen{
+.projectOpen {
     display: flex;
     gap: 25px;
 
-    position: relative;   
-    
+    position: relative;
+
     width: 100%;
     height: 100%;
     padding: 15px;
@@ -404,19 +409,19 @@ main{
     overflow-y: scroll;
 }
 
-.projectVisualInfo{
+.projectVisualInfo {
     max-width: 525px;
     width: 100%;
     height: 100%;
 }
 
-.projectImage{
+.projectImage {
     aspect-ratio: 2/1;
     max-width: 525px;
     width: 100%;
 }
 
-.projectImage img{
+.projectImage img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -424,32 +429,34 @@ main{
     border-radius: 5px;
 }
 
-.projectInfo h1{
+.projectInfo h1 {
     color: white;
     padding: 20px;
     font-family: var(--fontDelius);
 }
 
-.projectDescription{
+.projectDescription {
     max-width: 425px;
+
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
+
     padding: 15px;
     border-radius: 20px;
 }
 
-.projectDescription p{
+.projectDescription p {
     font: clamp(0.6em, 0.6em + 1vw, 1.1em) var(--fontPoppins);
     letter-spacing: 0.7px;
-    color: white;
+    color: rgb(240, 227, 227);
 }
 
-.closeWindow{
+.closeWindow {
     display: flex;
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
     color: black;
     background-color: white;
     border-radius: 50%;
@@ -461,24 +468,23 @@ main{
     font: 20px Verdana;
 }
 
-#linkWindow{
+#linkWindow {
     color: violet;
     white-space: nowrap;
+    display: block;
 }
 
-#linkWindow:hover{
+#linkWindow:hover {
     color: rgba(238, 130, 238, 0.705);
 }
 
-.closeWindow:hover{
+.closeWindow:hover {
     color: white;
     background-color: black;
 }
 
-
-
 /*Footer*/
-footer{
+footer {
     display: flex;
     justify-content: center;
 
@@ -488,14 +494,15 @@ footer{
     background-color: #13131f;
 }
 
-footer p{
+footer p {
     color: white;
     font-size: clamp(0.6em, 0.5em + 0.9vw, 1em);
+    text-align: center;
 }
 
 /*Others*/
 
-#hr{
+#hr {
     margin: auto;
     height: 1px;
     width: 30vw;
@@ -503,7 +510,7 @@ footer p{
     background-color: #202020;
 }
 
-.videoWallpaper{
+.videoWallpaper {
     left: 0;
     position: absolute;
     width: 100%;
@@ -512,77 +519,76 @@ footer p{
     object-fit: cover;
 }
 
-.projectStatistic{
+.projectStatistic {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.statsContainer{
+.statsContainer {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.statsImgContainer{
+.statsImgContainer {
     max-width: 30px;
     height: 30px;
     filter: grayscale(0.3);
 }
 
-.statsImgContainer img{
+.statsImgContainer img {
     width: 100%;
     height: 100%;
 }
 
-.statsLoadingContainer{
+.statsLoadingContainer {
     width: 400px;
     height: 10px;
     background-color: white;
     border-radius: 5px;
 }
 
-.statsLoading{
+.statsLoading {
     height: 100%;
     border-radius: 3px;
-    width: 0;
-    
 }
 
-.statsContainer p{
+.statsContainer p {
     color: white;
 }
 
 /*Animations*/
 
 @keyframes typing {
-    from{
+    from {
         content: '';
     }
-    to{
+
+    to {
         content: '|'
     }
 }
 
 /*ScrollBar*/
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 8px;
 }
 
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
     height: 3px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 20px;
 }
 
-::-webkit-scrollbar-track-piece{
+::-webkit-scrollbar-track-piece {
     background-color: transparent;
 }
 
-.projectOpen::-webkit-scrollbar-thumb{
+.projectOpen::-webkit-scrollbar-thumb {
     border-radius: 30px;
 }
