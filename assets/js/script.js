@@ -1,49 +1,46 @@
 //Add color to titles to avoid many id for each tag
 const changeTagColor = () => {
-    const $nameLanguage = document.getElementsByClassName('languageName')
+    const languageName = [...document.querySelectorAll('.languageName h2')]
 
-    for (var i = 0; i < $nameLanguage.length; i++) {
-        const nameAtual = $nameLanguage[i].children[0]
-        switch (i) {
+    languageName.forEach((currentTitle, index) =>{
+        switch (index) {
             case 0:
-                nameAtual.style.color = '#FF6520'
+                currentTitle.style.color = '#FF6520'
                 break
             case 1:
-                nameAtual.style.color = '#0074BE'
+                currentTitle.style.color = '#0074BE'
                 break
             case 2:
-                nameAtual.style.color = '#F8DC3E'
+                currentTitle.style.color = '#F8DC3E'
                 break
             case 3:
-                nameAtual.style.color = '#01DBFC'
+                currentTitle.style.color = '#01DBFC'
                 break
             case 4:
-                nameAtual.style.color = '#FFC107'
+                currentTitle.style.color = '#FFC107'
                 break
             case 5:
-                nameAtual.style.color = '#00758F'
+                currentTitle.style.color = '#00758F'
                 break
         }
-    }
+    })
 }
-
-changeTagColor();
 
 //Dissapear Menu when scrolling down and Appear when scrolling up
 
 const menu = document.querySelector('.menu');
-var scrollTotal = 0;
+var totalScroll = 0;
 
 const moveMenu = () => {
-    var scrollAtual = window.scrollY
+    var currentScroll = window.scrollY
 
-    if (scrollTotal < scrollAtual) {
+    if (totalScroll < currentScroll) {
         menu.style.transform = "translateY(-200px)"
     } else {
         menu.style.transform = 'translateY(0px)'
     }
 
-    scrollTotal = scrollAtual
+    totalScroll = currentScroll
 }
 
 window.addEventListener('scroll', moveMenu)
@@ -52,107 +49,72 @@ window.addEventListener('scroll', moveMenu)
 
 const cardSkills = document.querySelector('.cardSkills')
 const card = document.querySelectorAll('.cardSkills .cards')
-var contCard = 0;
-var current = ''
-var past = ''
 
-const shineEffect = () => {
-    let currentCard;
-    let pastCard;
+const effectShine = ()=>{
+    card.forEach((card, index)=>{
+        setTimeout(()=>{
+            const prevSiblingCard = card.previousElementSibling
 
-    if (0 <= contCard <= 5) {
-        currentCard = card[contCard]
-        if (contCard == 0) {
-            pastCard = card[5]
-        } else {
-            pastCard = card[contCard - 1]
-        }
-    }
+            effectMenager(card, prevSiblingCard)
 
-    contCard++
-
-    if (contCard >= 6) {
-        contCard = 0
-    }
-
-    current = currentCard
-    past = pastCard
-    styleCard(current, past, '#ffffff05')
-    cardInEffect()
-};
-
-const styleCard = (actually, past, color) => {
-    actually.style.filter = 'saturate(300%)'
-    actually.style.backgroundColor = `${color}`
-    past.style.filter = 'saturate(100%)'
-    past.style.backgroundColor = 'transparent'
+            if(index === 5) setTimeout(()=>{
+                card.classList.remove('shine')
+                effectShine()
+            }, 4000)
+         
+        }, index * 4000)
+    })
 }
 
-const cardInEffect = () => {
-    if (current == '') {
-        return
-    }
+const effectMenager = (currentCard, siblingCard)=>{
+    currentCard.classList.add('shine')
+    if(siblingCard !== null) siblingCard.classList.remove('shine')
+}   
 
-    if (insideCard === false) {
-        styleCard(current, past, '#ffffff05')
-    } else {
-        styleCard(current, past, '#12121A33')
-    }
-}
-
-var time = setInterval(shineEffect, 4500)
-var insideCard = false
-
-cardSkills.addEventListener('mouseenter', () => {
-    insideCard = true
-    cardInEffect()
-})
-
-cardSkills.addEventListener('mouseleave', () => {
-    insideCard = false
-    cardInEffect()
-})
-
-
-//Typing
+//Effect Typing
 
 const textType = 'Olá, meu nome é André.'
-const textElement = document.getElementById('textTyping')
-const mainElement = document.getElementById('mainContent')
-const socialMedia = document.getElementsByClassName('socialMedia')[0]
-var index = 0;
-var indexLetra = 0;
+let textWrong = 'Olá, meu nome é Ana.'
+const textElement = document.querySelector('#textTyping')
+const mainElement = document.querySelector('#mainContent')
 var speedTyping = 100
 
-const typingText = () => {
-    if (index >= 18 && index <= 19) {
-        if (index == 18) {
-            textElement.innerHTML += 'a'
-        } else if (index == 19) {
-            textElement.innerHTML += '.'
-            speedTyping = 1000
-            setTimeout(typingText, speedTyping)
-            index++
-            return
-        }
-    } else {
-        if (indexLetra < textType.length) {
-            if (index == 20) {
-                textElement.innerHTML = 'Olá, meu nome é Ana'
-                speedTyping = 500
-            } else if (index == 21) {
-                textElement.innerHTML = 'Olá, meu nome é An'
-                speedTyping = 100
-            } else {
-                textElement.innerHTML += textType[indexLetra]
-                indexLetra++
-            }
-        }
-    }
+const typingText = ()=>{
+    textElement.innerHTML = ''
 
-    index++
-    speedTyping = Math.floor(Math.random() * 100) + 100
-    setTimeout(typingText, speedTyping)
+    for(let i=0; i<textWrong.length; i++){
+        setTimeout(()=>{
+            textElement.textContent += textWrong[i]
+
+            if(i === textWrong.length-1){
+                speedTyping = Math.floor(Math.random() * 100) + 200
+                deleteName()
+            }
+        }, i * speedTyping)
+    }
+}
+
+const deleteName = ()=>{
+    for(let i=0; i<4; i++){
+        setTimeout(()=>{
+            textWrong = textWrong.substring(0, textWrong.length-1)
+            textElement.textContent = textWrong
+
+            if(i === 3) {
+                speedTyping = Math.floor(Math.random() * 100) + 100
+                correctName(textWrong.length)
+            }
+
+        }, i * speedTyping)
+    }
+}
+
+const correctName = (num)=>{
+    for(let i=num; i<textType.length; i++){
+        setTimeout(()=>{
+            textElement.textContent += textType[i]
+        }, (i-num) * speedTyping)
+    }
 }
 
 setTimeout(() => typingText(), 500)
@@ -160,33 +122,35 @@ setTimeout(() => typingText(), 500)
 //ProjectWindow
 
 const projectsSites = {
-    Ecommerce: {
+    0: {
         image: 'assets/image/projectsThumb/e-commerce.png',
         title: 'E-Commerce',
-        text: 'Esse projeto foi feito a partir de um site no SquareSpace com algumas modifições com JavaScript para deixar o site mais moderno. Sendo um dos meus primeiros projetos. O site está em aperfeiçoamento, link desativado.'
+        text: 'Esse projeto foi feito a partir de um site no SquareSpace com algumas modifições com JavaScript para deixar o site mais moderno. Sendo um dos meus primeiros projetos. O site está em aperfeiçoamento, link desativado.',
+        link: '#',
+        statistics: [193, 655, 276],
     },
-    LandingPage: {
+    1: {
         image: 'assets/image/projectsThumb/landingpage.png',
         title: 'Landing Page',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, veritatis ut aliquam ea neque, maxime fuga iusto corporis officia velit libero quae unde maiores quasi magnam deserunt reprehenderit sint? Aliquid, molestiae? Dolorem reiciendis, quae earum repellat nemo labore nisi! Ipsam placeat vero, nulla mollitia odio laboriosam eum labore asperiores eveniet? O site está em aperfeiçoamento, link desativado.'
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, veritatis ut aliquam ea neque, maxime fuga iusto corporis officia velit libero quae unde maiores quasi magnam deserunt reprehenderit sint? Aliquid, molestiae? Dolorem reiciendis, quae earum repellat nemo labore nisi! Ipsam placeat vero, nulla mollitia odio laboriosam eum labore asperiores eveniet? O site está em aperfeiçoamento, link desativado.',
+        link: '#',
+        statistics: [193, 320, 56]
     },
-    MemoryGame: {
+    2: {
         image: 'assets/image/projectsThumb/memory-game.png',
         title: 'MemoryGame',
-        text: 'Um simples jogo da memória com pontuação usando Javascript Puro. O sistema de pontuação consiste no tempo que alguém consegue terminar o jogo, sendo usado um LocalStorage para armazenar o player (só é possivel armazenar um player atualemente).'
-    }
+        text: 'Um simples jogo da memória com pontuação usando Javascript Puro. O sistema de pontuação consiste no tempo que alguém consegue terminar o jogo, sendo usado um LocalStorage para armazenar o player (só é possivel armazenar um player atualmente).',
+        link: 'https://andresiboli.github.io/memory-game',
+        statistics: [100, 271, 261]
+    },
 }
 
 const projectWindow = document.querySelector('.projectOpenContainer')
 const projects = document.querySelectorAll('.projectsGroups')
-var elementIndex = 0
 
-const appearDisplay = (e) => {
-    let elementImg;
-    let elementTitle;
-    let elementParagraph;
-    let elementStatistic;
-    let item = e.id;
+const appearDisplay = (e)=>{
+    const myObj = projectsSites[e.id]
+
     const image = document.querySelector('.projectImage')
     const projectInfo = document.querySelector('.projectInfo')
     const projectDescription = document.querySelector('.projectDescription')
@@ -194,29 +158,11 @@ const appearDisplay = (e) => {
 
     resetWindow(image, projectInfo, projectDescription, projectStatistic)
 
-    if (item === 'window0') {
-        let [html, css, js] = [193, 655, 276];
-        elementImg = createAnImage(projectsSites.Ecommerce.image);
-        elementTitle = createTitle(projectsSites.Ecommerce.title);
-        elementParagraph = createParagrath(projectsSites.Ecommerce.text, '#');
-        elementStatistic = createStatistic(html, css, js);
-    } else if (item === 'window1') {
-        let [html, css, js] = [193, 320, 56]
-        elementImg = createAnImage(projectsSites.LandingPage.image)
-        elementTitle = createTitle(projectsSites.LandingPage.title)
-        elementParagraph = createParagrath(projectsSites.LandingPage.text, '#')
-        elementStatistic = createStatistic(html, css, js);
-    } else if (item === 'window2') {
-        let [html, css, js] = [100, 271, 261]
-        elementImg = createAnImage(projectsSites.MemoryGame.image)
-        elementTitle = createTitle(projectsSites.MemoryGame.title)
-        elementParagraph = createParagrath(projectsSites.MemoryGame.text, 'https://andresiboli.github.io/memory-game')
-        elementStatistic = createStatistic(html, css, js);
-    } else {
-        return
-    }
-
-    var [htmlElement, cssElement, jsElement] = elementStatistic
+    const elementImg = createAnImage(myObj.image);
+    const elementTitle = createTitle(myObj.title);
+    const elementParagraph = createParagrath(myObj.text, myObj.link);
+    const elementStatistic = createStatistic(...myObj.statistics);
+    let [htmlElement, cssElement, jsElement] = elementStatistic;
 
     image.appendChild(elementImg)
     projectInfo.appendChild(elementTitle)
@@ -301,14 +247,32 @@ const createElementStats = (img, porcent, color) => {
     return statsContainer
 }
 
-projects.forEach(element => {
-    element.id = `window${elementIndex}`
-    element.addEventListener('click', () => appearDisplay(element))
-    elementIndex++
-})
-
 const closeWindow = document.querySelector('.closeWindow')
 
 closeWindow.addEventListener('click', () => {
     projectWindow.style.display = 'none'
+})
+
+//dateFooter
+
+const footer = document.querySelector('.footer #date')
+
+const footerDate = ()=>{
+    const year = new Date().getFullYear()
+    footer.textContent = year
+}
+
+//When the page loads
+
+window.addEventListener('load', ()=>{
+    changeTagColor();
+    effectShine();
+    footerDate();
+
+    var elementIndex = 0
+    projects.forEach(element => {
+        element.id = elementIndex
+        element.addEventListener('click', () => appearDisplay(element))
+        elementIndex++
+    });
 })

@@ -10,12 +10,16 @@
     --fontDelius: 'Delius', cursive;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #101010;
 }
 
 * {
-    : url('../image/cursor/iconmonstr-cursor-2.svg'), auto;
+    cursor: url('../image/cursor/iconmonstr-cursor-2.svg'), auto;
 }
 
 *:active {
@@ -159,7 +163,6 @@ main {
 
 .socialMedia {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 25px;
     width: 100%;
@@ -591,4 +594,11 @@ footer p {
 
 .projectOpen::-webkit-scrollbar-thumb {
     border-radius: 30px;
+}
+
+/*Effect Shine*/
+
+.shine{
+    filter: saturate(300%);
+    background-color: #23232c33;
 }
